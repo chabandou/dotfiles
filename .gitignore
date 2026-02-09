@@ -1,0 +1,28 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local bootstrap outputs
+packages/*.generated.txt
+
+# Secrets and credentials (do not commit)
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+*.ovpn
+*.secrets
+*.secret
+*.age
+*.gpg
+secrets/
+
+# SSH/GPG material
+**/.ssh/**
+**/gnupg/**

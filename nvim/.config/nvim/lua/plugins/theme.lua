@@ -1,0 +1,1 @@
+/home/chabandou/.config/omarchy/current/theme/neovim.lua

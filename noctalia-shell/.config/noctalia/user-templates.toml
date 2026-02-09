@@ -1,0 +1,69 @@
+[config]
+
+[templates]
+
+# --- Apps ---
+
+[templates.chromium]
+input_path = "/home/chabandou/.config/matugen/templates/chromium-color.txt"
+output_path = "/home/chabandou/.config/matugen/generated/chromium-color.txt"
+post_hook = 'COLOR=$(cat /home/chabandou/.config/matugen/generated/chromium-color.txt); chromium --no-startup-window --set-theme-color="$COLOR" --set-color-scheme="dark" 2>/dev/null || true'
+
+[templates.neovim]
+input_path = "/home/chabandou/.config/matugen/templates/neovim/template.lua"
+output_path = "/home/chabandou/.config/matugen/generated/nvim-colors.lua"
+post_hook = "pkill -SIGUSR1 nvim || true"
+
+[templates.swayosd]
+input_path = "/home/chabandou/.config/matugen/templates/swayosd-colors.css"
+output_path = "/home/chabandou/.config/matugen/generated/swayosd-colors.css"
+post_hook = "/home/chabandou/user_scripts/swayosd/restart_swayosd.sh"
+
+[templates.zathura]
+input_path = "/home/chabandou/.config/matugen/templates/zathura-colors"
+output_path = "/home/chabandou/.config/matugen/generated/zathura-colors"
+post_hook = "ln -nfs /home/chabandou/.config/matugen/generated/zathura-colors /home/chabandou/.config/zathura/zathurarc"
+
+[templates.starship]
+input_path = "/home/chabandou/.config/matugen/templates/starship-colors.toml"
+output_path = "/home/chabandou/.config/matugen/generated/starship-colors.toml"
+post_hook = "ln -nfs /home/chabandou/.config/matugen/generated/starship-colors.toml /home/chabandou/.config/starship.toml"
+
+[templates.btop]
+input_path = "/home/chabandou/.config/matugen/templates/btop.theme"
+output_path = "/home/chabandou/.config/matugen/generated/btop-colors.theme"
+post_hook = "mkdir -p /home/chabandou/.config/btop/themes; ln -nfs /home/chabandou/.config/matugen/generated/btop-colors.theme /home/chabandou/.config/btop/themes/matugen.theme"
+
+[templates.Obsidian]
+input_path = "/home/chabandou/.config/matugen/templates/obsidian-theme.css"
+output_path = "/home/chabandou/.config/matugen/generated/obsidian-theme.css"
+post_hook = "mkdir -p /home/chabandou/Documents/pensive/.obsidian/snippets; ln -nfs /home/chabandou/.config/matugen/generated/obsidian-theme.css /home/chabandou/Documents/pensive/.obsidian/snippets/matugen-theme.css"
+
+# --- System ---
+
+[templates.hyprlock]
+input_path = "/home/chabandou/.config/matugen/templates/hyprlock-colors.conf"
+output_path = "/home/chabandou/.config/matugen/generated/hyprlock-colors.conf"
+
+[templates.wlogout]
+input_path = "/home/chabandou/.config/matugen/templates/colors.css"
+output_path = "/home/chabandou/.config/matugen/generated/wlogout-colors.css"
+
+[templates.antigravity]
+input_path = "/home/chabandou/.config/matugen/templates/vscode-settings.json"
+output_path = "/home/chabandou/.config/Antigravity/User/settings.json"
+
+[templates.yazi]
+input_path = "/home/chabandou/.config/matugen/templates/yazi-theme.toml"
+output_path = "/home/chabandou/.config/matugen/generated/yazi-theme.toml"
+post_hook = "ln -nfs /home/chabandou/.config/matugen/generated/yazi-theme.toml /home/chabandou/.config/yazi/theme.toml"
+
+[templates.gtk3]
+input_path = "/home/chabandou/.config/matugen/templates/gtk-colors.css"
+output_path = "/home/chabandou/.config/matugen/generated/gtk-3.css"
+post_hook = "/home/chabandou/user_scripts/theme_matugen/set_yaru_icon_theme.sh"
+
+[templates.gtk4]
+input_path = "/home/chabandou/.config/matugen/templates/gtk-colors.css"
+output_path = "/home/chabandou/.config/matugen/generated/gtk-4.css"
+post_hook = "mkdir -p /home/chabandou/.config/gtk-3.0 /home/chabandou/.config/gtk-4.0; ln -nfs /home/chabandou/.config/matugen/generated/gtk-3.css /home/chabandou/.config/gtk-3.0/gtk.css; ln -nfs /home/chabandou/.config/matugen/generated/gtk-4.css /home/chabandou/.config/gtk-4.0/gtk.css; gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'; sleep 0.1; gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'; gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'; killall xdg-desktop-portal-gtk 2>/dev/null || true"

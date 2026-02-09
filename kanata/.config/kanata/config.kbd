@@ -1,0 +1,44 @@
+(defcfg
+  process-unmapped-keys yes
+  danger-enable-cmd no
+)
+
+;; Physical ANSI keyboard layout
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer base
+  _       _    _    _    _    _    _    _    _      _    _    _    _    _
+  _       _    _    _    _    _    _    _    _      _    _    _    _    _
+  lsft    _    _    _    @f    _    _    _   @k     _    _    @'    _
+  lmet    _    _    _    _    _    _    _    _      _    _    rmet
+  _       _    _              @spc           _      _    _
+)
+
+(deflayer extend
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _
+  _    esc  C-w  C-f  A-f4 C-t  C-y  pgup home up end S-ins C-] _
+  _    lmet lalt lsft lctl _    bspc pgdn left down rght bspc _
+  _    C-z  @scx @scc @scv C-b  @s1  @s2  @s3  @s4 @s5 _
+  _    _    _              _              _    _    _
+)
+
+(defalias
+  spc (tap-hold 200 200 spc (layer-while-held extend))
+  f (tap-hold 200 200 f lctl)
+  k (tap-hold 200 200 k lctl)
+  ' (tap-hold 200 200 ' rsft)
+  scc M-c
+  scv M-v
+  scx M-x
+  s1 M-1
+  s2 M-2
+  s3 M-3
+  s4 M-4
+  s5 M-5
+)

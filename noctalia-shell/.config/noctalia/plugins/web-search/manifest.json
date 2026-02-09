@@ -1,0 +1,28 @@
+{
+  "id": "web-search",
+  "name": "Web Search",
+  "version": "1.1.0",
+  "description": "Summarize DuckDuckGo results with a local Ollama model",
+  "tags": ["Launcher", "Productivity"],
+  "minNoctaliaVersion": "4.2.5",
+  "author": "chabandou",
+  "license": "MIT",
+  "repository": "",
+  "entryPoints": {
+    "launcherProvider": "LauncherProvider.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "commandPrefix": ">web",
+      "minQueryLength": 3,
+      "maxSources": 3,
+      "ollamaModel": "qwen2.5:0.5b-instruct-q5_0",
+      "pythonPath": "python3",
+      "outputFile": "~/.cache/noctalia/web-search-last.json"
+    }
+  }
+}
