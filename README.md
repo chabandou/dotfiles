@@ -1,6 +1,6 @@
-# Dotfiles Starter
+# Dotfiles Setup
 
-This repo stores your machine setup as reproducible dotfiles using GNU Stow.
+This repo stores my machine's setup as reproducible dotfiles using GNU Stow.
 
 ## Layout
 
@@ -15,7 +15,7 @@ Each top-level folder is a Stow module:
 - `noctalia-shell/.config/quickshell/noctalia-shell/*` -> `~/.config/quickshell/noctalia-shell/*`
 - etc.
 
-## 1) Import your current configs
+## Import current configs
 
 ```bash
 cd ~/dotfiles
@@ -24,12 +24,12 @@ cd ~/dotfiles
 ./scripts/import-configs.sh --include-local-bin
 ```
 
-## 2) Review before committing
+## Review before committing
 
 - Remove secrets/tokens from tracked files.
 - Keep private keys out of this repo (`~/.ssh`, GPG keys, etc.).
 
-## 3) Snapshot installed packages
+## Snapshot installed packages
 
 ```bash
 cd ~/dotfiles
@@ -38,7 +38,7 @@ cd ~/dotfiles
 
 This writes package manifests into `packages/`.
 
-## 4) Link configs on this machine
+## Link configs on current machine
 
 ```bash
 cd ~/dotfiles
@@ -52,24 +52,13 @@ If files already exist and you want Stow to adopt them into the repo:
 ./install.sh --adopt
 ```
 
-## 5) Reproduce on a fresh Arch install
+## Reproduce on a fresh Arch install
 
 ```bash
 sudo pacman -Syu --needed git
-git clone <your-repo-url> ~/dotfiles
+git clone https://github.com/chabandou/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./scripts/bootstrap-arch.sh
 ```
 This single command sequence handles linking dotfiles, downloading/installing DreymaR BigBag,
 Noctalia setup, kanata service enablement, and system keyboard apply from your saved snapshot.
-
-## Recommended next step
-
-Initialize Git and push:
-
-```bash
-cd ~/dotfiles
-git init
-git add .
-git commit -m "Initial dotfiles"
-```
