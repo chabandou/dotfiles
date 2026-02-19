@@ -26,3 +26,7 @@ secrets/
 # SSH/GPG material
 **/.ssh/**
 **/gnupg/**
+
+# Python cache artifacts
+**/__pycache__/
+*.py[cod]
