@@ -14,11 +14,6 @@ input_path = "/home/chabandou/.config/matugen/templates/neovim/template.lua"
 output_path = "/home/chabandou/.config/matugen/generated/nvim-colors.lua"
 post_hook = "pkill -SIGUSR1 nvim || true"
 
-[templates.swayosd]
-input_path = "/home/chabandou/.config/matugen/templates/swayosd-colors.css"
-output_path = "/home/chabandou/.config/matugen/generated/swayosd-colors.css"
-post_hook = "/home/chabandou/user_scripts/swayosd/restart_swayosd.sh"
-
 [templates.zathura]
 input_path = "/home/chabandou/.config/matugen/templates/zathura-colors"
 output_path = "/home/chabandou/.config/matugen/generated/zathura-colors"

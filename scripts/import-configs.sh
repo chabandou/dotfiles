@@ -102,6 +102,7 @@ main() {
   copy_item "$HOME_DIR/.config/kitty" "$DOTFILES_DIR/kitty/.config/kitty"
   copy_item "$HOME_DIR/.config/nvim" "$DOTFILES_DIR/nvim/.config/nvim"
   copy_item "$HOME_DIR/.config/hypr/input.conf" "$DOTFILES_DIR/keyboard/.config/hypr/input.conf"
+  copy_item "/usr/share/X11/xkb/symbols/colemak" "$DOTFILES_DIR/keyboard/.config/keyboard-system/xkb-symbols/colemak"
   copy_item "/etc/vconsole.conf" "$DOTFILES_DIR/keyboard/.config/keyboard-system/vconsole.conf"
   copy_item "/etc/X11/xorg.conf.d/00-keyboard.conf" "$DOTFILES_DIR/keyboard/.config/keyboard-system/00-keyboard.conf"
   snapshot_localectl_status

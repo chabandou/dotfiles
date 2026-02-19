@@ -15,7 +15,7 @@
 (deflayer base
   _       _    _    _    _    _    _    _    _      _    _    _    _    _
   _       _    _    _    _    _    _    _    _      _    _    _    _    _
-  lsft    _    _    _    @f    _    _    _   @k     _    _    @'    _
+  lsft    @a   _    _    @f    _    _    _   @k     _    _    @'    _
   lmet    _    _    _    _    _    _    _    _      _    _    rmet
   _       _    _              @spc           _      _    _
 )
@@ -30,6 +30,7 @@
 
 (defalias
   spc (tap-hold 200 200 spc (layer-while-held extend))
+  a (tap-hold 200 200 a ralt)
   f (tap-hold 200 200 f lctl)
   k (tap-hold 200 200 k lctl)
   ' (tap-hold 200 200 ' rsft)
